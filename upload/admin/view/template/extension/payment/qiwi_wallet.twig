@@ -1,0 +1,291 @@
+{{ header }}{{ column_left }}
+<div id="content">
+	<div class="page-header">
+		<div class="container-fluid">
+			<div class="pull-right"><div class="btn-group" role="group" aria-label="...">
+					<button type="submit" form="form-qiwi-wallet" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+					<a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div></div>
+			<h1>{{ heading_title }}</h1>
+			<ul class="breadcrumb">
+				{% for breadcrumb in breadcrumbs %}
+				<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<div class="container-fluid">
+		{% if error_warning %}
+		<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+		</div>
+		{% endif %}
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-md-6">
+						<h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+					</div>
+					<div class="col-md-6 text-right">
+						<a href="https://ishop.qiwi.com/register/start.action">{{ text_registration }}</a>
+					</div>
+				</div>
+			</div>
+			<div class="panel-body">
+				<form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-qiwi-wallet" class="form-horizontal">
+					<div class="form-group required">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_ccy_select"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_ccy_select }}">{{ entry_qiwi_wallet_ccy_select }}</span></label>
+						<div class="col-sm-10">
+							<select name="qiwi_wallet_ccy_select" id="qiwi_wallet_ccy_select" class="form-control">
+								{% for currency in currencies %}
+								{% if currency.code == qiwi_wallet_ccy_select %}
+								<option value="{{ currency.code }}" selected="selected">{{ currency.code }}</option>
+								{% else %}
+								<option value="{{ currency.code }}">{{ currency.code }}</option>
+								{% endif %}
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group required">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_shop_id"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_shop_id }}">{{ entry_qiwi_wallet_shop_id }}</span></label>
+						<div class="col-sm-10">
+							<input type="text" name="qiwi_wallet_shop_id" value="{{ qiwi_wallet_shop_id }}" placeholder="{{ help_qiwi_wallet_shop_id }}" id="qiwi_wallet_shop_id" class="form-control" />
+							{% if error_qiwi_wallet_shop_id %}
+							<div class="text-danger">{{ error_qiwi_wallet_shop_id }}</div>
+							{% endif %}
+						</div>
+					</div>
+
+					<div class="form-group required">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_id"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_id }}">{{ entry_qiwi_wallet_id }}</span></label>
+						<div class="col-sm-10">
+							<input type="text" name="qiwi_wallet_id" value="{{ qiwi_wallet_id }}" placeholder="{{ help_qiwi_wallet_id }}" id="qiwi_wallet_id" class="form-control" />
+							{% if error_qiwi_wallet_id %}
+							<div class="text-danger">{{ error_qiwi_wallet_id }}</div>
+							{% endif %}
+						</div>
+					</div>
+
+					<div class="form-group required">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_password"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_password }}">{{ entry_qiwi_wallet_password }}</span></label>
+						<div class="col-sm-10">
+							<input type="text" name="qiwi_wallet_password" value="{{ qiwi_wallet_password }}" placeholder="{{ help_qiwi_wallet_password }}" id="qiwi_wallet_password" class="form-control" />
+							{% if error_qiwi_wallet_password %}
+							<div class="text-danger">{{ error_qiwi_wallet_password }}</div>
+							{% endif %}
+						</div>
+					</div>
+
+					<div class="form-group required">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_lifetime"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_lifetime }}">{{ entry_qiwi_wallet_lifetime }}</span></label>
+						<div class="col-sm-10">
+							<input type="text" name="qiwi_wallet_lifetime" value="{{ qiwi_wallet_lifetime }}" placeholder="{{ help_qiwi_wallet_lifetime }}" id="qiwi_wallet_lifetime" class="form-control" />
+							{% if error_qiwi_wallet_lifetime %}
+							<div class="text-danger">{{ error_qiwi_wallet_lifetime }}</div>
+							{% endif %}
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_result_url"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_result_url }}">{{ entry_qiwi_wallet_result_url }}</span></label>
+						<div class="col-sm-10">
+							<span class="form-control"><b>{{ qiwi_wallet_result_url }}</b></span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_order_status_progress_id"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_order_status_progress_id }}">{{ entry_qiwi_wallet_order_status_progress_id }}</span></label>
+						<div class="col-sm-10">
+							<select name="qiwi_wallet_order_status_progress_id" id="qiwi_wallet_order_status_progress_id" class="form-control">
+								{% for order_status in order_statuses %}
+								{% if order_status.order_status_id == qiwi_wallet_order_status_progress_id %}
+								<option value="{{ order_status.order_status_id }}" selected="selected">{{ order_status.name }}</option>
+								{% else %}
+								<option value="{{ order_status.order_status_id }}">{{ order_status.name }}</option>
+								{% endif %}
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_order_status_id"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_order_status_id }}">{{ entry_qiwi_wallet_order_status_id }}</span></label>
+						<div class="col-sm-10">
+							<select name="qiwi_wallet_order_status_id" id="qiwi_wallet_order_status_id" class="form-control">
+								{% for order_status in order_statuses %}
+								{% if order_status.order_status_id == qiwi_wallet_order_status_id %}
+								<option value="{{ order_status.order_status_id }}" selected="selected">{{ order_status.name }}</option>
+								{% else %}
+								<option value="{{ order_status.order_status_id }}">{{ order_status.name }}</option>
+								{% endif %}
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_order_status_cancel_id">
+							<span data-toggle="tooltip" title="{{ help_qiwi_wallet_order_status_cancel_id }}">{{ entry_qiwi_wallet_order_status_cancel_id }}</span></label>
+						<div class="col-sm-10">
+							<select name="qiwi_wallet_order_status_cancel_id" id="qiwi_wallet_order_status_cancel_id" class="form-control">
+								{% for order_status in order_statuses %}
+								{% if order_status.order_status_id == qiwi_wallet_order_status_cancel_id %}
+								<option value="{{ order_status.order_status_id }}" selected="selected">{{ order_status.name }}</option>
+								{% else %}
+								<option value="{{ order_status.order_status_id }}">{{ order_status.name }}</option>
+								{% endif %}
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_geo_zone_id"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_geo_zone_id }}">{{ entry_qiwi_wallet_geo_zone_id }}</span></label>
+						<div class="col-sm-10">
+							<select name="qiwi_wallet_geo_zone_id" id="qiwi_wallet_geo_zone_id" class="form-control">
+								<option value="0">{{ text_all_zones }}</option>
+								{% for geo_zone in geo_zones %}
+								{% if geo_zone.geo_zone_id == qiwi_wallet_geo_zone_id %}
+								<option value="{{ geo_zone.geo_zone_id }}" selected="selected">{{ geo_zone.name }}</option>
+								{% else %}
+								<option value="{{ geo_zone.geo_zone_id }}">{{ geo_zone.name }}</option>
+								{% endif %}
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_total"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_total }}">{{ entry_qiwi_wallet_total }}</span></label>
+						<div class="col-sm-10">
+							<input type="text" name="qiwi_wallet_total" value="{{ qiwi_wallet_total }}" placeholder="{{ help_qiwi_wallet_total }}" id="qiwi_wallet_total" class="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_show_pay_now"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_show_pay_now }}">{{ entry_qiwi_wallet_show_pay_now }}</span></label>
+						<div class="col-sm-10">
+							<div class="checkbox">
+								<label>
+									{% if qiwi_wallet_show_pay_now %}
+									<input type="checkbox" name="qiwi_wallet_show_pay_now" id="qiwi_wallet_show_pay_now" value="1" checked="checked" />
+									{% else %}
+									<input type="checkbox" name="qiwi_wallet_show_pay_now" id="qiwi_wallet_show_pay_now" value="1" />
+									{% endif %}
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_mode_select"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_mode_select }}">{{ entry_qiwi_wallet_mode_select }}</span></label>
+						<div class="col-sm-10">
+							<select name="qiwi_wallet_mode_select" id="qiwi_wallet_mode_select" class="form-control">
+								{% for mode in entry_qiwi_wallet_modes %}
+								{% if mode.code == qiwi_wallet_mode_select %}
+								<option value="{{ mode.code }}" selected="selected">{{ mode.code_text }}</option>
+								{% else %}
+								<option value="{{ mode.code }}">{{ mode.code_text }}</option>
+								{% endif %}
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_mode_show_picture"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_mode_show_picture }}">{{ entry_qiwi_wallet_mode_show_picture }}</span></label>
+						<div class="col-sm-10">
+							<select name="qiwi_wallet_mode_show_picture" id="qiwi_wallet_mode_show_picture" class="form-control">
+								{% for mode in entry_qiwi_wallet_modes_show_picture %}
+								{% if mode.code == qiwi_wallet_mode_show_picture %}
+								<option value="{{ mode.code }}" selected="selected">{{ mode.code_text }}</option>
+								{% else %}
+								<option value="{{ mode.code }}">{{ mode.code_text }}</option>
+								{% endif %}
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_markup"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_markup }}">{{ entry_qiwi_wallet_markup }}</span></label>
+						<div class="col-sm-10">
+							<input type="text" name="qiwi_wallet_markup" value="{{ qiwi_wallet_markup }}" placeholder="{{ help_qiwi_wallet_markup }}" id="qiwi_wallet_markup" class="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_name"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_name }}">{{ entry_qiwi_wallet_name }}</span></label>
+						<div class="col-sm-10">
+							<input type="text" name="qiwi_wallet_name" value="{{ qiwi_wallet_name }}" placeholder="{{ help_qiwi_wallet_name }}" id="qiwi_wallet_name" class="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_group_desc"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_groups_settings }}">{{ entry_qiwi_wallet_groups_settings }}</span></label>
+						<div class="col-sm-10">
+
+							<table class="table table-bordered table-hover">
+								<thead>
+								<tr>
+									<th>{{ entry_qiwi_wallet_group_name }}</th>
+									<th>{{ entry_qiwi_wallet_group_markup }}</th>
+									<th>{{ entry_qiwi_wallet_group_desc }}</th>
+								</tr>
+								</thead>
+								<tbody>
+								{% if customer_groups %}
+								{% for customer_group in customer_groups %}
+								<tr>
+									<td class="left">{{ customer_group.name }}</td>
+									<td>
+										<input type="text" name="qiwi_wallet_group_markup[{{ customer_group.customer_group_id }}]" 
+										value="{% if qiwi_wallet_group_markup.customer_group.customer_group_id %} qiwi_wallet_group_markup[{{ customer_group.customer_group_id }}] {% endif %}"
+										class="form-control"></td>    
+									<td><input type="text" name="qiwi_wallet_group_desc[{{ customer_group.customer_group_id }}]" 
+										value="{% if qiwi_wallet_group_desc[customer_group.customer_group_id] %} qiwi_wallet_group_desc[customer_group.customer_group_id] {% endif %}"
+										class="form-control"></td>
+								</tr>
+								{% endfor %}
+								{% else %}
+								<tr>
+									<td class="center" colspan="3">{{ text_no_results }}</td>
+								</tr>
+								{% endif %}
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_status"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_status }}">{{ entry_qiwi_wallet_status }}</span></label>
+						<div class="col-sm-10">
+							<select name="qiwi_wallet_status" id="qiwi_wallet_status" class="form-control">
+								{% if qiwi_wallet_status %}
+								<option value="1" selected="selected">{{ text_enabled }}</option>
+								<option value="0">{{ text_disabled }}</option>
+								{% else %}
+								<option value="1">{{ text_enabled }}</option>
+								<option value="0" selected="selected">{{ text_disabled }}</option>
+								{% endif %}
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="qiwi_wallet_sort_order"><span data-toggle="tooltip" title="{{ help_qiwi_wallet_sort_order }}">{{ entry_qiwi_wallet_sort_order }}</span></label>
+						<div class="col-sm-10">
+							<input type="text" name="qiwi_wallet_sort_order" value="{{ qiwi_wallet_sort_order }}" placeholder="{{ help_qiwi_wallet_sort_order }}" id="qiwi_wallet_sort_order" class="form-control" />
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+{{ footer }} 
