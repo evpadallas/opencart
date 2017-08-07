@@ -75,11 +75,11 @@ a:hover, a:focus {
 #header .navbar-header {
 	transition: 0.3s all;
 	border-right: 1px solid #eee;
-	width: 235px;
+	width: 265px;
 	display: none;
 }
 #header .navbar-brand {
-	margin-left: 8px;
+	margin-left: 28px;
 }
 
 #header .navbar-nav > li {
@@ -148,13 +148,13 @@ a:hover, a:focus {
 	}
 }
 #column-left {
-	width: 235px;
+	width: 265px;
 	height: 100%;
 	overflow: auto;
 	background-color: #242d37;
 	position: absolute;
 	top: 0px;
-	left: -235px;
+	left: -265px;
 	padding-top: 60px;
 	z-index: 10;
 }
@@ -180,7 +180,7 @@ a:hover, a:focus {
 	left: 0px;
 }
 #column-left.active + #content, #column-left.active + #content + #footer {
-	left: 235px;
+	left: 265px;
 }
 /* Desktop */
 @media (min-width: 768px){
@@ -189,11 +189,11 @@ a:hover, a:focus {
 }
 #column-left + #content, #column-left + #content + #footer {
 	left: 0px;
-	margin-left: 235px;
+	margin-left: 265px;
 }
 #column-left.active + #content, #column-left.active + #content + #footer {
 	left: 0px;
-	margin-left: 235px;
+	margin-left: 265px;
 }
 }
 
