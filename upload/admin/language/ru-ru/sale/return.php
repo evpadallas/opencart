@@ -1,55 +1,55 @@
 <?php
 // Heading
-$_['heading_title']        = 'Product Returns';
+$_['heading_title']        = 'Возвраты товаров';
 
 // Text
 $_['text_success']         = 'Success: You have modified returns!';
-$_['text_list']            = 'Product Return List';
-$_['text_add']             = 'Add Product Return';
-$_['text_edit']            = 'Edit Product Return';
-$_['text_opened']          = 'Opened';
-$_['text_unopened']        = 'Unopened';
-$_['text_order']           = 'Order Information';
-$_['text_product']         = 'Product Information &amp; Reason for Return';
-$_['text_history']         = 'History';
-$_['text_history_add']     = 'Add History';
+$_['text_list']            = 'Список возвратов товара';
+$_['text_add']             = 'Добавление возврата товара';
+$_['text_edit']            = 'Редактирование возврата товара';
+$_['text_opened']          = 'Упаковка вскрыта';
+$_['text_unopened']        = 'Товар не распакован';
+$_['text_order']           = 'Информация о заказе';
+$_['text_product']         = 'Информация о товаре и причина возврата';
+$_['text_history']         = 'История';
+$_['text_history_add']     = 'Добавить историю';
 
 // Column
-$_['column_return_id']     = 'Return ID';
-$_['column_order_id']      = 'Order ID';
-$_['column_customer']      = 'Customer';
-$_['column_product']       = 'Product';
-$_['column_model']         = 'Model';
-$_['column_status']        = 'Status';
-$_['column_date_added']    = 'Date Added';
-$_['column_date_modified'] = 'Date Modified';
-$_['column_comment']       = 'Comment';
-$_['column_notify']        = 'Customer Notified';
-$_['column_action']        = 'Action';
+$_['column_return_id']     = 'Номер возврата';
+$_['column_order_id']      = 'Номер заказа';
+$_['column_customer']      = 'Покупатель';
+$_['column_product']       = 'Товар';
+$_['column_model']         = 'Артикул';
+$_['column_status']        = 'Статус';
+$_['column_date_added']    = 'Дата добавления';
+$_['column_date_modified'] = 'Дата изменения';
+$_['column_comment']       = 'Комментарий';
+$_['column_notify']        = 'Покупатель уведомлен';
+$_['column_action']        = 'Действие';
 
 // Entry
-$_['entry_customer']       = 'Customer';
-$_['entry_order_id']       = 'Order ID';
-$_['entry_date_ordered']   = 'Order Date';
-$_['entry_firstname']      = 'First Name';
-$_['entry_lastname']       = 'Last Name';
+$_['entry_customer']       = 'Покупатель';
+$_['entry_order_id']       = 'Номер заказа';
+$_['entry_date_ordered']   = 'Дата заказа';
+$_['entry_firstname']      = 'Имя';
+$_['entry_lastname']       = 'Фамилия';
 $_['entry_email']          = 'E-Mail';
-$_['entry_telephone']      = 'Telephone';
-$_['entry_product']        = 'Product';
-$_['entry_model']          = 'Model';
-$_['entry_quantity']       = 'Quantity';
-$_['entry_opened']         = 'Opened';
-$_['entry_comment']        = 'Comment';
-$_['entry_return_reason']  = 'Return Reason';
-$_['entry_return_action']  = 'Return Action';
-$_['entry_return_status']  = 'Return Status';
-$_['entry_notify']         = 'Notify Customer';
-$_['entry_return_id']      = 'Return ID';
-$_['entry_date_added']     = 'Date Added';
-$_['entry_date_modified']  = 'Date Modified';
+$_['entry_telephone']      = 'Телефон';
+$_['entry_product']        = 'Товар';
+$_['entry_model']          = 'Артикул';
+$_['entry_quantity']       = 'Количество';
+$_['entry_opened']         = 'Целостность упаковки';
+$_['entry_comment']        = 'Комментарий';
+$_['entry_return_reason']  = 'Причина возврата';
+$_['entry_return_action']  = 'Действие';
+$_['entry_return_status']  = 'Статус возврата';
+$_['entry_notify']         = 'Уведомить покупателя';
+$_['entry_return_id']      = 'Номер возврата';
+$_['entry_date_added']     = 'Дата добавления';
+$_['entry_date_modified']  = 'Дата изменения';
 
 // Help
-$_['help_product']         = '(Autocomplete)';
+$_['help_product']         = '(Автозаполнение)';
 
 // Error
 $_['error_warning']        = 'Warning: Please check the form carefully for errors!';
