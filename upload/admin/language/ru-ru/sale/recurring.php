@@ -78,5 +78,5 @@ $_['entry_payment_method']                 = 'Payment Method';
 $_['entry_cancel_payment']                 = 'Cancel Payment';
 
 // Error
-$_['error_not_cancelled']                  = 'Error: %s';
+$_['error_not_cancelled']                  = 'Ошибка! %s';
 $_['error_not_found']                      = 'Could not cancel recurring profile';

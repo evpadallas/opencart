@@ -101,19 +101,19 @@ $_['button_order_recurring']        = 'View Recurring Order';
 $_['button_buy']                    = 'Купить';
 
 // Tab
-$_['tab_affiliate']                 = 'Affiliate';
-$_['tab_address']                   = 'Address';
-$_['tab_additional']                = 'Additional';
-$_['tab_admin']                     = 'Admin';
+$_['tab_affiliate']                 = 'Партнерская программа';
+$_['tab_address']                   = 'Адрес';
+$_['tab_additional']                = 'Дополнительно';
+$_['tab_admin']                     = 'Администрирование';
 $_['tab_attribute']                 = 'Атрибуты';
 $_['tab_customer']                  = 'Данные покупателя';
 $_['tab_comment']                   = 'Комментарий';
-$_['tab_data']                      = 'Данные';
+$_['tab_data']                      = 'Детальная информация';
 $_['tab_description']               = 'Описание';
 $_['tab_design']                    = 'Дизайн';
 $_['tab_discount']                  = 'Скидки';
 $_['tab_documentation']             = 'Документация';
-$_['tab_general']                   = 'Основное';
+$_['tab_general']                   = 'Общие сведения';
 $_['tab_history']                   = 'История';
 $_['tab_ftp']                       = 'FTP';
 $_['tab_ip']                        = 'IP адреса';

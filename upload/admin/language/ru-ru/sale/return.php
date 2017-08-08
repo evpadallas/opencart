@@ -3,7 +3,7 @@
 $_['heading_title']        = 'Возвраты товаров';
 
 // Text
-$_['text_success']         = 'Success: You have modified returns!';
+$_['text_success']         = 'Поздравляем! Вы успешно отредактировали возврат товара!';
 $_['text_list']            = 'Список возвратов товара';
 $_['text_add']             = 'Добавление возврата товара';
 $_['text_edit']            = 'Редактирование возврата товара';
@@ -34,7 +34,7 @@ $_['entry_date_ordered']   = 'Дата заказа';
 $_['entry_firstname']      = 'Имя';
 $_['entry_lastname']       = 'Фамилия';
 $_['entry_email']          = 'E-Mail';
-$_['entry_telephone']      = 'Телефон';
+$_['entry_telephone']      = '№ телефона';
 $_['entry_product']        = 'Товар';
 $_['entry_model']          = 'Артикул';
 $_['entry_quantity']       = 'Количество';
@@ -52,8 +52,8 @@ $_['entry_date_modified']  = 'Дата изменения';
 $_['help_product']         = '(Автозаполнение)';
 
 // Error
-$_['error_warning']        = 'Warning: Please check the form carefully for errors!';
-$_['error_permission']     = 'Warning: You do not have permission to modify returns!';
+$_['error_warning']        = 'Внимание! Please check the form carefully for errors!';
+$_['error_permission']     = 'Внимание! You do not have permission to modify returns!';
 $_['error_order_id']       = 'Order ID required!';
 $_['error_firstname']      = 'First Name must be between 1 and 32 characters!';
 $_['error_lastname']       = 'Last Name must be between 1 and 32 characters!';
